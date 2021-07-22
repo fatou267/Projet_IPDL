@@ -2,3 +2,4 @@
 
 ### `Prerequisites`
 
+    Install [Composer](https://https://getcomposer.org/download/)

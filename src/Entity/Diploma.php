@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -9,173 +10,211 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Diploma
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
-     */
-    private $id;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $title;
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $dateObtained;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $country;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $town;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $intitutions;
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $average;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $mention;
-    
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue
+	 */
+	private $id;
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $title;
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $dateObtained;
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $country;
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $town;
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $intitutions;
+	/**
+	 * @ORM\Column(type="float")
+	 */
+	private $average;
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $mention;
+	/**
+	 * @ORM\ManyToOne(targetEntity="Doctorant",inversedBy="myDiplomas")
+	 */
+	private $doctorantOwner;
+
 	/**
 	 * 
 	 * @return integer
 	 */
-	public function getId() {
+	public function getId()
+	{
 		return $this->id;
 	}
 
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	public function getTitle() {
+	public function getTitle()
+	{
 		return $this->title;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $title 
 	 * @return Diploma
 	 */
-	public function setTitle($title): self {
+	public function setTitle($title): self
+	{
 		$this->title = $title;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return \Datetime
 	 */
-	public function getDateObtained() {
+	public function getDateObtained()
+	{
 		return $this->dateObtained;
 	}
-	
+
 	/**
 	 * 
 	 * @param \Datetime $dateObtained 
 	 * @return Diploma
 	 */
-	public function setDateObtained($dateObtained): self {
+	public function setDateObtained($dateObtained): self
+	{
 		$this->dateObtained = $dateObtained;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	public function getCountry() {
+	public function getCountry()
+	{
 		return $this->country;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $country 
 	 * @return Diploma
 	 */
-	public function setCountry($country): self {
+	public function setCountry($country): self
+	{
 		$this->country = $country;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	public function getTown() {
+	public function getTown()
+	{
 		return $this->town;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $town 
 	 * @return Diploma
 	 */
-	public function setTown($town): self {
+	public function setTown($town): self
+	{
 		$this->town = $town;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	public function getIntitutions() {
+	public function getIntitutions()
+	{
 		return $this->intitutions;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $intitutions 
 	 * @return Diploma
 	 */
-	public function setIntitutions($intitutions): self {
+	public function setIntitutions($intitutions): self
+	{
 		$this->intitutions = $intitutions;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return float
 	 */
-	public function getAverage() {
+	public function getAverage()
+	{
 		return $this->average;
 	}
-	
+
 	/**
 	 * 
 	 * @param float $average 
 	 * @return Diploma
 	 */
-	public function setAverage($average): self {
+	public function setAverage($average): self
+	{
 		$this->average = $average;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	public function getMention() {
+	public function getMention()
+	{
 		return $this->mention;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $mention 
 	 * @return Diploma
 	 */
-	public function setMention($mention): self {
+	public function setMention($mention): self
+	{
 		$this->mention = $mention;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return Doctorant
+	 */
+	function getDoctorantOwner()
+	{
+		return $this->doctorantOwner;
+	}
+
+	/**
+	 * 
+	 * @param Doctorant $doctorantOwner 
+	 * @return Diploma
+	 */
+	function setDoctorantOwner($doctorantOwner): self
+	{
+		$this->doctorantOwner = $doctorantOwner;
 		return $this;
 	}
 }

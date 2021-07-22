@@ -2,7 +2,7 @@
 
 ### `Prerequisites`
 
-   Install [Composer](https://https://getcomposer.org/download/)
+   Install [Composer](https://getcomposer.org/download/)<br>
    Use `composer update` to install the following dependencies:
    - **Doctrine ORM** for database mapping
   

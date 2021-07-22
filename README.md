@@ -21,8 +21,15 @@
         *@ORM\Entity
         *@ORM\Table(name="foo")
         */
-        class foo{
-
+        class foo
+        {
+            
+            /**
+             * @ORM\Id
+             * @ORM\Column(type="integer")
+             * @ORM\GeneratedValue
+             */
+            private $id;
             /**
             *@ORM\Column(type="string")
             */

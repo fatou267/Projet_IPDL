@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="theses")
  */
-class These
+class Thesis
 {
     /**
      * @ORM\Id
@@ -23,6 +23,10 @@ class These
      * @ORM\Column(type="text")
      */
     private $content;
+	/**
+	 * @ORM\OneToOne(targetEntity="Doctorant",inversedBy="myThesis")
+	 */
+	private $doctorantOwner;
 
 	/**
 	 * 
@@ -43,7 +47,7 @@ class These
 	/**
 	 * 
 	 * @param string $subject 
-	 * @return These
+	 * @return Thesis
 	 */
 	public function setSubject($subject): self {
 		$this->subject = $subject;
@@ -61,10 +65,27 @@ class These
 	/**
 	 * 
 	 * @param string $content 
-	 * @return These
+	 * @return Thesis
 	 */
 	public function setContent($content): self {
 		$this->content = $content;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return mixed
+	 */
+	function getDoctorantOwner() {
+		return $this->doctorantOwner;
+	}
+	
+	/**
+	 * 
+	 * @param mixed $doctorantOwner 
+	 * @return Thesis
+	 */
+	function setDoctorantOwner($doctorantOwner): self {
+		$this->doctorantOwner = $doctorantOwner;
 		return $this;
 	}
 }

@@ -43,7 +43,11 @@ class Diploma
      * @ORM\Column(type="string")
      */
     private $mention;
-    
+    /**
+	 * @ORM\ManyToOne(targetEntity="Doctorant",inversedBy="myDiplomas")
+	 */
+	private $doctorantOwner;
+
 	/**
 	 * 
 	 * @return integer
@@ -176,6 +180,23 @@ class Diploma
 	 */
 	public function setMention($mention): self {
 		$this->mention = $mention;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return Doctorant
+	 */
+	function getDoctorantOwner() {
+		return $this->doctorantOwner;
+	}
+	
+	/**
+	 * 
+	 * @param Doctorant $doctorantOwner 
+	 * @return Diploma
+	 */
+	function setDoctorantOwner($doctorantOwner): self {
+		$this->doctorantOwner = $doctorantOwner;
 		return $this;
 	}
 }

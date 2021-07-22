@@ -23,8 +23,11 @@ class Doctorat
      * @ORM\Column(type="string")
      */
     private $attachedInstitution;
-    
     public const DOCTORAL_SCHOOL = "Ecole Doctorale de Mathematiques et Informatique";
+	/**
+	 * @ORM\ManyToOne(targetEntity="Doctorant",inversedBy="myDoctorat")
+	 */
+	private $doctorantOwner;
 
 	/**
 	 * 

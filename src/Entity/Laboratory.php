@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -9,73 +10,80 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Laboratory
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
-     */
-    private $id;
-    private $name;
-    private $address;
-    private $email;
-    
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue
+	 */
+	private $id;
+	private $name;
+	private $address;
+	private $email;
+
 	/**
 	 * 
 	 * @return integer
 	 */
-	function getId() {
+	function getId()
+	{
 		return $this->id;
 	}
 	/**
 	 * 
 	 * @return string
 	 */
-	function getName() {
+	function getName()
+	{
 		return $this->name;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $name 
 	 * @return Laboratory
 	 */
-	function setName($name): self {
+	function setName($name): self
+	{
 		$this->name = $name;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	function getAddress() {
+	function getAddress()
+	{
 		return $this->address;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $address 
 	 * @return Laboratory
 	 */
-	function setAddress($address): self {
+	function setAddress($address): self
+	{
 		$this->address = $address;
 		return $this;
 	}
-	
+
 	/**
 	 * 
 	 * @return string
 	 */
-	function getEmail() {
+	function getEmail()
+	{
 		return $this->email;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $email 
 	 * @return Laboratory
 	 */
-	function setEmail($email): self {
+	function setEmail($email): self
+	{
 		$this->email = $email;
 		return $this;
 	}

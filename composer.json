@@ -1,0 +1,17 @@
+{
+    "name": "esp/projet_ipdl",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "Jonathan Kuro",
+        "email": "kurojojo08@gmail.com"
+    }],
+    "require": {
+        "doctrine/orm": "^2.6.2",
+        "symfony/yaml": "2.*",
+        "symfony/cache": "^5.3"
+    }
+}

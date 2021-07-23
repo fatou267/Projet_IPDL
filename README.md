@@ -39,3 +39,12 @@
 
         }
 
+### Architecture
+
+   For this project, we use MVC pattern to strucutre our code.
+   So we have the following folders and files: 
+   
+         - Controller : for all controllers
+         - Entity : for all model entities
+         - Repository : for model (database requests)
+         - index.php : the router

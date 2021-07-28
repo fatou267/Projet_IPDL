@@ -2,13 +2,21 @@
 
 namespace App\Entity\Request;
 
+use App\Entity\Laboratory;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\InheritanceType;
+use Doctrine\ORM\Mapping\DiscriminatorMap;
+use App\Entity\Request\RegistrationRequest;
+use Doctrine\ORM\Mapping\DiscriminatorColumn;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="requests")
+ * @InheritanceType("JOINED")
+ * @DiscriminatorColumn(name="type", type="string")
+ * @DiscriminatorMap({"registrationRequest" = "RegistrationRequest","derogationRequest"="DerogationRequest","renewalRequest"="RenewalRequest","re_registrationRequest"="ReRegistrationRequest"})
  */
-class Request
+abstract class Request
 {
 	/**
 	 * @ORM\Id
@@ -28,6 +36,12 @@ class Request
 	 * @ORM\Column(type="string")
 	 */
 	private $state;
+	/**
+	 * @ORM\ManyToOne(targetEntity="App\Entity\Laboratory",inversedBy="requestsAssociated")
+	 *
+	 * @var Laboratory
+	 */
+	private $laboratoryAssociated;
 
 	/**
 	 * 
@@ -94,6 +108,25 @@ class Request
 	public function setState($state): self
 	{
 		$this->state = $state;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return Laboratory
+	 */
+	public function getLaboratoryAssociated()
+	{
+		return $this->laboratoryAssociated;
+	}
+
+	/**
+	 * 
+	 * @param Laboratory $laboratoryAssociated 
+	 * @return Request
+	 */
+	public function setLaboratoryAssociated($laboratoryAssociated): self
+	{
+		$this->laboratoryAssociated = $laboratoryAssociated;
 		return $this;
 	}
 }

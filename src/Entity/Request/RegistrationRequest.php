@@ -127,4 +127,21 @@ class RegistrationRequest extends Request
 		$this->thesisCharter = $thesisCharter;
 		return $this;
 	}
+	/**
+	 * 
+	 * @return mixed
+	 */
+	function getDoctorantOwner() {
+		return $this->doctorantOwner;
+	}
+	
+	/**
+	 * 
+	 * @param mixed $doctorantOwner 
+	 * @return RegistrationRequest
+	 */
+	function setDoctorantOwner($doctorantOwner): self {
+		$this->doctorantOwner = $doctorantOwner;
+		return $this;
+	}
 }

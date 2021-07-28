@@ -3,12 +3,18 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\InheritanceType;
+use Doctrine\ORM\Mapping\DiscriminatorMap;
+use Doctrine\ORM\Mapping\DiscriminatorColumn;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="users")
+ * @InheritanceType("JOINED")
+ * @DiscriminatorColumn(name="type", type="string")
+ * @DiscriminatorMap({"doctorant" = "Doctorant"})
  */
-class User
+abstract class User
 {
 	/**
 	 * @ORM\Id
@@ -40,7 +46,10 @@ class User
 	 * @ORM\Column(type="string")
 	 */
 	private $phoneNumber;
-
+	/**
+	 * @ORM\Column(type="json")
+	 */
+	private $roles = [];
 
 	/**
 	 * 
@@ -168,6 +177,24 @@ class User
 	public function setPhoneNumber($phoneNumber): self
 	{
 		$this->phoneNumber = $phoneNumber;
+		return $this;
+	}
+
+	/**
+	 * @see UserInterface
+	 */
+	public function getRoles(): array
+	{
+		$roles = $this->roles;
+		// guarantee every user at least has ROLE_USER
+		$roles[] = 'ROLE_USER';
+		return array_unique($roles);
+	}
+
+	public function setRoles(array $roles): self
+	{
+		$this->roles = $roles;
+
 		return $this;
 	}
 }

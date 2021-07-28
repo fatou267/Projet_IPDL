@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Request\Request;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,15 +17,30 @@ class Laboratory
 	 * @ORM\GeneratedValue
 	 */
 	private $id;
+	/**
+	 * @ORM\Column(type="string")
+	 */
 	private $name;
+	/**
+	 * @ORM\Column(type="string")
+	 */
 	private $address;
+	/**
+	 * @ORM\Column(type="string")
+	 */
 	private $email;
+	/**
+	 * @ORM\OneToOne(targetEntity="App\Entity\Request\Request", mappedBy="laboratoryAssociated")
+	 * 
+	 * @var Request[]
+	 */
+	private $requestsAssociated;
 
 	/**
 	 * 
 	 * @return integer
 	 */
-	function getId()
+	public function getId()
 	{
 		return $this->id;
 	}
@@ -32,7 +48,7 @@ class Laboratory
 	 * 
 	 * @return string
 	 */
-	function getName()
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -42,7 +58,7 @@ class Laboratory
 	 * @param string $name 
 	 * @return Laboratory
 	 */
-	function setName($name): self
+	public function setName($name): self
 	{
 		$this->name = $name;
 		return $this;
@@ -52,7 +68,7 @@ class Laboratory
 	 * 
 	 * @return string
 	 */
-	function getAddress()
+	public function getAddress()
 	{
 		return $this->address;
 	}
@@ -62,7 +78,7 @@ class Laboratory
 	 * @param string $address 
 	 * @return Laboratory
 	 */
-	function setAddress($address): self
+	public function setAddress($address): self
 	{
 		$this->address = $address;
 		return $this;
@@ -72,7 +88,7 @@ class Laboratory
 	 * 
 	 * @return string
 	 */
-	function getEmail()
+	public function getEmail()
 	{
 		return $this->email;
 	}
@@ -82,9 +98,28 @@ class Laboratory
 	 * @param string $email 
 	 * @return Laboratory
 	 */
-	function setEmail($email): self
+	public function setEmail($email): self
 	{
 		$this->email = $email;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return Request[]
+	 */
+	public function getRequestsAssociated()
+	{
+		return $this->requestsAssociated;
+	}
+
+	/**
+	 * 
+	 * @param Request[] $requestsAssociated 
+	 * @return Laboratory
+	 */
+	public function setRequestsAssociated($requestsAssociated): self
+	{
+		$this->requestsAssociated = $requestsAssociated;
 		return $this;
 	}
 }

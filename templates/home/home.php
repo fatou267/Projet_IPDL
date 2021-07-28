@@ -6,45 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/home.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon/">
+    <link rel="manifest" href="/site.webmanifest">
     <title>EDMI-Ecole Doctorale de Mathématiques et Informatique</title>
 </head>
 
 <body>
     <div class="container">
         <header class="header">
-            <div class="navbar">
-                <div class="logo">
-                    <a href="">
-                        <img src="/public/images/home/logo.gif" alt="">
-                    </a>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">Accueil</a>
-                        </li>
-                        <li>
-                            <a href=" #">A propos</a>
-                        </li>
-                        <li>
-                            <a href="#">Admission</a>
-                        </li>
-                        <li>
-                            <a href=" #">Espace utilisateur</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="title">
 
-                <h1>ECOLE DOCTORALE MATHÉMATIQUES-INFORMATIQUE</h1>
-                <h2>Université Cheikh Anta Diop de Dakar</h2>
-            </div>
+            <?php
+            require('templates/partials/navbar.php');
+            ?>
+                <div class="title">
+
+                    <h1>ECOLE DOCTORALE MATHÉMATIQUES-INFORMATIQUE</h1>
+                    <h2>Université Cheikh Anta Diop de Dakar</h2>
+                </div>
         </header>
-        <section class="about">
+        <section class="about" id="about">
             <img src="/public/images/home/about.png" alt="">
 
             <div class="content">

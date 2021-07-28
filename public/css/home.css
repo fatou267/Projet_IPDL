@@ -1,13 +1,5 @@
-:root {
-    --primary: #489c8f;
-    --secondary: #1a5999;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
+@import url('style.css');
+@import url('navbar.css');
 .container {
     height: 100vh;
     width: auto;
@@ -18,15 +10,9 @@
     background-attachment: fixed;
 }
 
-.header {
-    height: 100%;
-    color: var(--primary);
-    font-size: 14px;
-}
-
 .title {
     position: relative;
-    top: 25%;
+    top: 40 %;
     text-align: center;
     font-size: 25px;
     margin: auto;
@@ -40,35 +26,6 @@
     color: var(--primary);
     font-size: 20px;
     margin-top: 20px;
-}
-
-.navbar {
-    height: 150px;
-    background-color: #fff;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    margin-left: 50px;
-}
-
-.header nav {
-    flex: 1;
-    position: absolute;
-    right: 1%;
-}
-
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0px 20px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .about {

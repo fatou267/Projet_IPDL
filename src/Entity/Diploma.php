@@ -37,10 +37,6 @@ class Diploma
 	 */
 	private $intitutions;
 	/**
-	 * @ORM\Column(type="float")
-	 */
-	private $average;
-	/**
 	 * @ORM\Column(type="string")
 	 */
 	private $mention;
@@ -156,26 +152,6 @@ class Diploma
 	public function setIntitutions($intitutions): self
 	{
 		$this->intitutions = $intitutions;
-		return $this;
-	}
-
-	/**
-	 * 
-	 * @return float
-	 */
-	public function getAverage()
-	{
-		return $this->average;
-	}
-
-	/**
-	 * 
-	 * @param float $average 
-	 * @return Diploma
-	 */
-	public function setAverage($average): self
-	{
-		$this->average = $average;
 		return $this;
 	}
 

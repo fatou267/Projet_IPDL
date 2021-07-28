@@ -21,25 +21,25 @@ class Doctorant extends User
 	 */
 	private $id;
 	/**
-	 * @ORM\Column(type="date")
+	 * @ORM\Column(type="date",nullable=true)
 	 * 
 	 * @var \DateTime
 	 */
 	private $birthDate;
 	/**
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string",nullable=true)
 	 * 
 	 * @var string
 	 */
 	private $birthPlace;
 	/**
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string",nullable=true)
 	 * 
 	 * @var string
 	 */
 	private $wifeName;
 	/**
-	 * @ORM\OneToOne(targetEntity="Thesis",mappedBy="doctorant")
+	 * @ORM\OneToOne(targetEntity="Thesis",mappedBy="doctorantOwner")
 	 * 
 	 * @var Thesis
 	 */

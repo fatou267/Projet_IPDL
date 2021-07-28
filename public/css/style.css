@@ -1,0 +1,13 @@
+:root {
+    --primary: #489c8f;
+    --secondary: #1a5999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.error {
+    color: #F00;
+}

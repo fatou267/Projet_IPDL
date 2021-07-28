@@ -24,6 +24,9 @@ class Doctorat
 	 * @ORM\Column(type="string")
 	 */
 	private $attachedInstitution;
+	/**
+	 * @ORM\Column(type="string")
+	 */
 	public const DOCTORAL_SCHOOL = "Ecole Doctorale de Mathematiques et Informatique";
 	/**
 	 * @ORM\ManyToOne(targetEntity="Doctorant",inversedBy="myDoctorat")
@@ -67,5 +70,31 @@ class Doctorat
 	public function getAttachedInstitution()
 	{
 		return $this->attachedInstitution;
+	}
+	/**
+	 * 
+	 * @param mixed $attachedInstitution 
+	 * @return Doctorat
+	 */
+	function setAttachedInstitution($attachedInstitution): self {
+		$this->attachedInstitution = $attachedInstitution;
+		return $this;
+	}
+	/**
+	 * 
+	 * @return mixed
+	 */
+	function getDoctorantOwner() {
+		return $this->doctorantOwner;
+	}
+	
+	/**
+	 * 
+	 * @param mixed $doctorantOwner 
+	 * @return Doctorat
+	 */
+	function setDoctorantOwner($doctorantOwner): self {
+		$this->doctorantOwner = $doctorantOwner;
+		return $this;
 	}
 }

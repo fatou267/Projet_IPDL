@@ -3,6 +3,22 @@
     --secondary: #1a5999;
 }
 
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
 * {
     margin: 0;
     padding: 0;

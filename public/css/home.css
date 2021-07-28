@@ -1,6 +1,6 @@
 @import url('style.css');
 @import url('navbar.css');
-.container {
+.content {
     height: 100vh;
     width: auto;
     position: relative;
@@ -12,7 +12,7 @@
 
 .title {
     position: relative;
-    top: 40 %;
+    top: 40%;
     text-align: center;
     font-size: 25px;
     margin: auto;
@@ -42,23 +42,13 @@
     margin: 8% 0 8% 25%;
 }
 
-.about .content>h1 {
-    font-size: 36px;
-    padding-bottom: 40px;
-    padding-top: 30px;
-    font-weight: 400;
+.about-content>h1 {
+    font-size: 32px;
+    font-weight: 800;
 }
 
-.about .content {
+.about-content {
     color: var(--primary);
-    max-width: 350px;
-    max-height: 100%;
-    background-color: #fff;
-    margin: 15% 0 8% -5%;
-    padding: 0 60px;
-    font-size: 13.5px;
-    line-height: 2;
-    position: relative;
 }
 
 .about .content>p {
@@ -66,18 +56,69 @@
     max-height: 100%;
 }
 
-.about .content>button {
+.contact {
+    position: relative;
+}
+
+.contact>button {
     padding: 15px;
     border: 0.5px solid var(--primary);
     background-color: #fff;
     color: var(--primary);
     border-radius: 25px;
-    position: absolute;
     bottom: 30px;
     cursor: pointer;
+    transition: background-color .5s;
 }
 
-.about .content>button:hover {
-    background-color: var(--primary);
+.contact>button:hover {
+    background-color: var(--secondary);
     color: #fff;
+}
+
+.quote {
+    padding: 100px;
+    height: 100%;
+}
+
+.admission {
+    width: 60%;
+    margin: auto
+}
+
+.admission-body {
+    height: auto;
+}
+
+.card-img-overlay {
+    width: max-content;
+}
+
+.footer {
+    height: 400px;
+    position: relative;
+}
+
+.footer .footer-content {
+    height: 320px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+}
+
+.footer .footer-bottom {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+}
+
+footer {
+    margin-top: 150px;
 }

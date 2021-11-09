@@ -5,25 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon/">
+    <link rel="apple-touch-icon" sizes="180x180" href="/../../public/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/../../public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/../../public/images/favicon/">
     <link rel="manifest" href="/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/public/css/home.css" type="text/css">
+    <link rel="stylesheet" href="../../../../public/css/home.css" type="text/css">
+    <link rel="stylesheet" href="../../../../public/css/navbar.css" type="text/css">
+
     <title>EDMI-Ecole Doctorale de Mathématiques et Informatique</title>
 </head>
 
 <body>
     <div class="content">
         <header class="header">
-
-            <?php
-            require('templates/partials/navbar.php');
-            ?>
+        <div class="navbar ">
+        <div class="logo">
+            <a href="/">
+                <img src="/../../public/images/home/logo.gif" alt="">
+            </a>
+        </div>
+    
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Accueil</a>
+                </li>
+                <li>
+                    <a href="#about">A propos</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a href="#adm">Admission</a>
+                        <div class="dropdown-menu">
+                            <a href="#">Inscription</a>
+                            <a href="#">Réinscription</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <?php
+                        if (isset($_COOKIE['email'])) {
+                            echo '
+                            <a href="/logout" class="logout">Se déconnecter</a>
+                            ';
+                        }else{
+                            echo '
+                            <a href="../connection/login.php" class="login">Se connecter</a>
+                            ';
+                        }
+                        ?>
+                </li>
+            </ul>
+        </nav>
+    </div>
+           
                 <div class="title">
 
                     <h1>ECOLE DOCTORALE MATHÉMATIQUES-INFORMATIQUE</h1>
@@ -37,7 +79,7 @@
                     <div class="card mb-3" style="max-width: 540px; margin-top: 15%;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="/public/images/home/about.png" class="img-fluid rounded-start" alt="...">
+                                <img src="/../../public/images/home/about.jpg" class="img-fluid rounded-start" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body about-content">
@@ -59,7 +101,7 @@
             <div class="row g-0 mx-4 mt-5">
                 <div class="col 5 mx-4">
                     <div class="card h-100">
-                        <img src="/public/images/home/presentation.png" class="card-img-top" alt="...">
+                        <img src="/../../public/images/home/presentation.png" class="card-img-top" alt="...">
 
                         <div class="card-body titre text-center">
                             <div class="m-5 p-5">
@@ -70,7 +112,7 @@
                 </div>
                 <div class="col mx-4">
                     <div class="card h-100">
-                        <img src="/public/images/home/admission.png" class="card-img-top" alt="...">
+                        <img src="/../../public/images/home/admission.jpg" class="card-img-top" alt="...">
 
                         <div class="card-body titre text-center">
                             <div class="m-5 p-5">
@@ -82,7 +124,7 @@
                 </div>
                 <div class="col mx-4">
                     <div class="card h-100">
-                        <img src="/public/images/home/faculty.png" class="card-img-top" alt="...">
+                        <img src="/../../public/images/home/faculty.jpg" class="card-img-top" alt="...">
                         <div class="card-body titre text-center">
                             <div class="m-5 p-5">
                                 <h5 class="card-title ">NOS FILLIERES</h5>
@@ -104,14 +146,14 @@
             </div>
         </section>
 
-        <section>
+        <section id="adm">
             <h3 class="text-center text-primary my-5">ADMISSIONS ET INSCRIPTION</h3>
             <p class="text-primary mb-5 text-center admission">EDMI est fier(ère) d'ouvrir les admissions pour la prochaine année scolaire. Découvrez plus d'informations sur les modalités d'inscription, les prérequis, les frais et les aides financières ci-dessous. N'hésitez pas à nous contacter pour en
                 savoir plus.</p>
             <div class="card-group mx-5 mt-5">
 
                 <div class="mr-4 card">
-                    <img src="/public/images/home/biblio.png" class="card-img-top" alt="...">
+                    <img src="/../../public/images/home/biblio.png" class="card-img-top" alt="...">
                     <div class="card-body admission-body bg-primary p-5 titre text-center">
                         <h5 class="card-title" style="margin-top: 10%;">Ce qu’il faut savoir sur l’inscription</h5>
                         <p class="card-text" style="margin-top: 10%;">Nous vous invitons à entamer les démarches d'inscription à EDMI en prenant rendez-vous pour une visite de notre établissement. Une visite guidée personnalisée vous aidera à vous faire une idée de ce à quoi pourrait ressembler votre
@@ -123,7 +165,7 @@
                     </div>
                 </div>
                 <div class="mr-4 card">
-                    <img src="/public/images/home/guarantee.png" class="card-img-top" alt="...">
+                    <img src="/../../public/images/home/header.jpg" class="card-img-top" alt="...">
                     <div class="card-body admission-body bg-primary p-5 titre text-center">
                         <h5 class="card-title" style="margin-top: 10%;">N'attendez pas plus longtemps</h5>
                         <p class="card-text" style="margin-top: 10%;">Bien que les bulletins de note soient un facteur important dans l'admission à EDMI, nous prenons en considération de nombreux autres éléments. Réussite sire ou extra-scolaire, expériences et qualités personnelles; ces éléments,
@@ -136,7 +178,7 @@
                     </div>
                 </div>
                 <div class="col mr-4 card">
-                    <img src="/public/images/home/talent.png" class="card-img-top" alt="...">
+                    <img src="/../../public/images/home/guarantee.jpg" class="card-img-top" alt="...">
                     <div class="card-body admission-body bg-primary p-5 titre text-center">
                         <h5 class="card-title" style="margin-top: 10%;">Talents recherchés</h5>
                         <p class="card-text" style="margin-top: 10%;">Les notes ne représentent qu'une partie de la vie d'un étudiant, elle sont souvent trop prises en compte par les bureaux d'inscriptions des établissements. EDMI sélectionne ses élèves à partir d'éléments indiquant leur potentiel
@@ -154,9 +196,9 @@
 
         </section>
 
-        <section>
+        <section id="contact">
             <div class="card border-0 mt-5">
-                <img src="/public/images/home/header.png" class="card-img" alt="...">
+                <img src="/../../public/images/home/guarantee.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay mx-auto m-5">
                     <div class="footer">
                         <div class="footer-content">

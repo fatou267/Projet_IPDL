@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/register.css" type="text/css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon/">
+    <link rel="stylesheet" href="/../../public/css/register.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/../../public/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/../../public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/../../public/images/favicon/">
     <link rel="manifest" href="/site.webmanifest">
     <title>Inscription</title>
 </head>
 
 <body>
-    <header class="header">
-        <?php
-        require('templates/partials/navbar.php');
-        ?>
-    </header>
+   
 
     <h1>Demande d'admission en Doctorat l'EDMI</h1>
 
@@ -29,11 +26,11 @@
                 <legend><span class="number">1</span>Identification du candidat</legend>
                 <div>
                     <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" id="lastname" value="<?= $doctorant->getLastname() ?>" required><br>
+                    <input type="text" name="lastname" id="lastname"  required><br>
                 </div>
                 <div>
                     <label for="firstname">Prénoms</label>
-                    <input type="text" name="firstname" id="firstname" value="<?= $doctorant->getFirstname() ?>" required><br>
+                    <input type="text" name="firstname" id="firstname" required><br>
                 </div>
                 <div>
                     <label for="wifename">Nom d'épouse</label>
@@ -41,15 +38,15 @@
                 </div>
                 <div>
                     <label for="address">Adresse domicile</label>
-                    <input type="text" name="address" id="address" value="<?= $doctorant->getAddress() ?>" required><br>
+                    <input type="text" name="address" id="address" required><br>
                 </div>
                 <div>
                     <label for="phoneNumber">Téléphone</label>
-                    <input type="text" name="phoneNumber" id="phoneNumber" value="<?= $doctorant->getPhoneNumber() ?>" required><br>
+                    <input type="text" name="phoneNumber" id="phoneNumber"  required><br>
                 </div>
                 <div>
                     <label for="email">Adresse email</label>
-                    <input type="text" name="email" id="email" value="<?= $doctorant->getEmail() ?>" required><br>
+                    <input type="text" name="email" id="email"  required><br>
                 </div>
 
             </fieldset>

@@ -1,13 +1,14 @@
 @import url('style.css');
 @import url('navbar.css');
 .content {
-    height: 100vh;
+    height: fit-content;
     width: auto;
     position: relative;
     background-image: url(../images/home/header.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow:scroll;
 }
 
 .title {
@@ -121,4 +122,13 @@
 
 footer {
     margin-top: 150px;
+}
+
+nav {
+    font-size: large;
+    font-weight: bold;
+}
+
+body {
+    font-size: large;
 }

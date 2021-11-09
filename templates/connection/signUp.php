@@ -5,22 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/signup.css" type="text/css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon/">
+    <link rel="stylesheet" href="/../../public/css/signup.css" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/../../public/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/../../public/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/../../public/images/favicon/">
     <link rel="manifest" href="/site.webmanifest">
     <title>EDMI-Se connecter</title>
 </head>
 
 <body>
-    <header class="header">
-
-        <?php
-        require('templates/partials/navbar.php');
-        ?>
-    </header>
-
+   
     <div class="container">
         <div class="form">
             <h1>Création de compte</h1>
@@ -49,6 +43,7 @@
             <div class="signup">
                 Vous avez déjà un compte?
                 <a href="/login">Se connecter</a>
+                <p><a href="../home/home.php">Retour a l'Accueil</a></p>
             </div>
         </div>
 

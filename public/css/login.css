@@ -1,5 +1,18 @@
 @import url('style.css');
 @import url('navbar.css');
+
+body{
+    height: "100%";
+    width: "100%";
+    background-image: url(../../public/images/home/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .navbar {
     position: relative;
 }
